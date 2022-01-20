@@ -1,14 +1,11 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
-
+    label 'linux'
   }
   stages {
     stage('build') {
       steps {
-        sh 'docker --version'
+        sh 'docker build -t aa .'
       }
     }
 
