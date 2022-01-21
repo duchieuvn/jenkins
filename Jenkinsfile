@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        bat 'docker build -t aa .'
+        bat 'docker build -t $BUILD_NUMBER .'
       }
     }
 
