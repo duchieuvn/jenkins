@@ -12,7 +12,7 @@ pipeline {
     
       stage('Push Image') {
         steps {                
-          bat 'winpty docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          bat 'docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
           bat 'docker push aa'
         }
       }
