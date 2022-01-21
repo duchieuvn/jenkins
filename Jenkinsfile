@@ -12,8 +12,9 @@ pipeline {
     
       stage('Push Image') {
         steps {                
-          bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-          bat 'docker push aa'
+          withDockerRegistry([ credentialsId: "dockerhub_id", url: "" ]){
+            bat 'docker push aa'
+          }
         }
       }
   }
